@@ -3,7 +3,8 @@ A view for Android that shows multiple, resizable squares.
 
 ## Screenshots
 The best way to get to know the library is to start using it. The screenshot on the left is from the example app, and right is from MixUp on the [Play Store](https://play.google.com/store/apps/details?id=com.gerardbradshaw.v2mixup).
-<img src="/art/screenshot.png?raw=true" width="400px"> <img src="/art/screenshot_mix_up.png?raw=true" width="400px">
+
+<img src="/art/screenshot.png?raw=true" width="400px"> <img src="/art/screenshot_mixup.png?raw=true" width="400px">
 
 ## Features
 The out-of-box features of this library include:
