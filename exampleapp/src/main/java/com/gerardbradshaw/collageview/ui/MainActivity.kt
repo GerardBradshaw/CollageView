@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.FrameLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.updateLayoutParams
 import com.gerardbradshaw.collageview.R
@@ -27,7 +28,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
   private fun initCollage() {
     parentFrame = findViewById(R.id.parent_frame)
-
     collageFrame = findViewById(R.id.collage_frame)
 
     collageFrame.viewTreeObserver.addOnGlobalLayoutListener(
@@ -43,27 +43,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
   private fun addDefaultCollageToFrame() {
     collage = CollageView4Image4(this, null, collageFrame.width, collageFrame.height)
-
-    //collage = CollageView3Image2(collageFrame.context, null, collageFrame.width, collageFrame.height)
-
     collageFrame.addView(collage)
-
     collage.setImageClickListener(this)
   }
 
   override fun onClick(v: View) {
     if (v is TouchImageView) {
       lastImageClickedIndex = v
-      resizeCollage()
-    }
-  }
-
-  private fun resizeCollage() {
-    collage.resize(collageFrame.width / 2, collageFrame.height / 2)
-
-    parentFrame.updateLayoutParams {
-      this.width = parentFrame.width / 2
-      this.height = parentFrame.height / 2
+      Toast.makeText(this, "You clicked a view!", Toast.LENGTH_SHORT).show()
     }
   }
 }
